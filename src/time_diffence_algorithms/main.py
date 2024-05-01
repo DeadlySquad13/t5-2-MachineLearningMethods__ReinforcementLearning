@@ -1,8 +1,11 @@
+import sys
+
 import gym
 import matplotlib.pyplot as plt
 import numpy as np
 from tqdm import tqdm
-from toy_environment.main import CLIFF_WALKING_ENV
+
+from toy_environment.consts import CLIFF_WALKING_ENV
 
 ENV = CLIFF_WALKING_ENV
 
@@ -359,11 +362,22 @@ def run_double_q_learning():
     run_algorithm(agent)
 
 
-def main():
-    # run_sarsa()
-    # run_q_learning()
-    run_double_q_learning()
+def main(algorithm: str):
+    match algorithm:
+        case "sarsa":
+            run_sarsa()
+        case "q_learning":
+            run_q_learning()
+        case "double_q_learning":
+            run_double_q_learning()
+        case _:
+            print("Choose algorithm from one of the existing")
 
 
 if __name__ == "__main__":
-    main()
+    print(sys.argv)
+
+    if len(sys.argv) < 2:
+        raise Exception('Please choose algorithm by passing argument')
+
+    main(algorithm=sys.argv[1])

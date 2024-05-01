@@ -2,7 +2,7 @@ from pprint import pprint
 
 import gym
 import numpy as np
-from toy_environment.main import CLIFF_WALKING_ENV
+from toy_environment.consts import CLIFF_WALKING_ENV
 
 ENV = CLIFF_WALKING_ENV
 
