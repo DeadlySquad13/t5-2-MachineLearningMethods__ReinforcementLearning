@@ -1,0 +1,16 @@
+---
+title: "Docs"
+---
+
+This is a Quarto website.
+
+```{python}
+def hello_world():
+    print('hello world!')
+```
+
+```{python}
+hello_world()
+```
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
