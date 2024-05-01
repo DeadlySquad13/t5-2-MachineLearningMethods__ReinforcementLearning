@@ -2,6 +2,9 @@ from pprint import pprint
 
 import gym
 import numpy as np
+from toy_environment.main import CLIFF_WALKING_ENV
+
+ENV = CLIFF_WALKING_ENV
 
 
 class PolicyIterationAgent:
@@ -12,19 +15,17 @@ class PolicyIterationAgent:
     def __init__(self, env):
         self.env = env
         # Пространство состояний
-        self.observation_dim = 16
-        # Массив действий в соответствии с документацией
-        # https://www.gymlibrary.dev/environments/toy_text/frozen_lake/
-        self.actions_variants = np.array([0, 1, 2, 3])
+        self.observation_dim = ENV["observation_dim"]
+        self.actions_variants = np.array(ENV["actions_variants"])
         # Задание стратегии (политики)
         # Карта 4х4 и 4 возможных действия
         self.policy_probs = np.full(
-            (self.observation_dim, len(self.actions_variants)), 0.25
+            (self.observation_dim, len(self.actions_variants)), 1 / len(ENV["actions_variants"])
         )
         # Начальные значения для v(s)
         self.state_values = np.zeros(shape=(self.observation_dim))
         # Начальные значения параметров
-        self.maxNumberOfIterations = 1000
+        self.maxNumberOfIterations = 100_000
         self.theta = 1e-6
         self.gamma = 0.99
 
@@ -109,8 +110,8 @@ class PolicyIterationAgent:
 
 
 def play_agent(agent):
-    env2 = gym.make("FrozenLake-v1", render_mode="human")
-    state = env2.reset()[0]
+    env = gym.make(ENV["name"], render_mode="human")
+    state = env.reset()[0]
     done = False
     while not done:
         p = agent.policy_probs[state]
@@ -118,8 +119,8 @@ def play_agent(agent):
             action = np.random.choice(len(agent.actions_variants), p=p)
         else:
             action = p
-        next_state, reward, terminated, truncated, _ = env2.step(action)
-        env2.render()
+        next_state, reward, terminated, truncated, _ = env.step(action)
+        env.render()
         state = next_state
         if terminated or truncated:
             done = True
@@ -127,13 +128,15 @@ def play_agent(agent):
 
 def main():
     # Создание среды
-    env = gym.make("FrozenLake-v1")
+    env = gym.make(ENV["name"])
     env.reset()
+
     # Обучение агента
     agent = PolicyIterationAgent(env)
     agent.print_policy()
-    agent.policy_iteration(1000)
+    agent.policy_iteration(100_000)
     agent.print_policy()
+
     # Проигрывание сцены для обученного агента
     play_agent(agent)
 
