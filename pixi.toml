@@ -1,7 +1,7 @@
 [project]
-name = "MlOps_course__Tasks"
+name = "t5-2-MachineLearningMethods__ReinforcementLearning"
 version = "0.1.0"
-description = "Tasks made during MlOps course"
+description = "Machine Learning Methods Course - Reinforcement Learning"
 authors = ["DeadlySquad13 <46250621+DeadlySquad13@users.noreply.github.com>"]
 channels = ["conda-forge"]
 platforms = ["linux-64"]
