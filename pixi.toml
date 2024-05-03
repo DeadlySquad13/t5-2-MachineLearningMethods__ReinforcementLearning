@@ -32,7 +32,7 @@ gym = ">=0.26.1,<0.27"
 
 [feature.test]
 tasks = { test = "pytest" }
-pypi-dependencies = { MlOps_course__Tasks = { path = "./", editable = true }, pytest = "==6.2.5", pytest-cov = "==2.12.1" }
+pypi-dependencies = { t5-2-MachineLearningMethods__ReinforcementLearning = { path = "./", editable = true }, pytest = "==6.2.5", pytest-cov = "==2.12.1" }
 
 [feature.lint.tasks]
 lint-check = "flake8 src"
@@ -54,7 +54,7 @@ isort = "==5.13.2"
 
 [feature.pre-commit]
 tasks = { pre-commit-check = "pre-commit run --all-files" }
-pypi-dependencies = { MlOps_course__Tasks = { path = "./", editable = true }, pre-commit = "==3.7.0" }
+pypi-dependencies = { t5-2-MachineLearningMethods__ReinforcementLearning = { path = "./", editable = true }, pre-commit = "==3.7.0" }
 
 [feature.quarto.tasks]
 preview-docs = "quarto preview docs"
@@ -78,7 +78,7 @@ dev = ["test", "lint", "pre-commit"]
 dqn-dev = ["deep-learning", "test", "lint", "pre-commit"]
 dev-ju = ["test", "lint", "jupyter", "pre-commit"]
 dev-ju-nvim = ["test", "lint", "jupyter", "jupyter-neovim", "pre-commit"]
-quarto = ["quarto", "jupyter",]
+quarto = ["quarto", "jupyter"]
 dev-quarto = ["test", "lint", "quarto", "jupyter", "pre-commit"]
 
 [target.linux-64.dependencies]
