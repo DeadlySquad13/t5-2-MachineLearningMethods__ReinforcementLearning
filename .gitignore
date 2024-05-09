@@ -106,7 +106,9 @@ celerybeat.pid
 
 # Environments
 .env
-.env.dev
+.env*
+# - But add example files in git.
+!.env*.example
 .venv
 env/
 venv/
