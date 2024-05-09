@@ -8,14 +8,16 @@ format:
   html:
     comments:
       hypothesis: true
+    css: report.styles.scss
   docx: default
   jats: default
+
+fontsize: "14px"
+mainfont: "Times New Roman"
 
   # (other formats)
   # pdf: default
 
 execute:
   freeze: true
-
-
 
