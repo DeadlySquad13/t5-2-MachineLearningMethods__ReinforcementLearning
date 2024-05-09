@@ -1,20 +1,17 @@
----
-fontsize: 14px
-mainfont: "Times New Roman"
----
 {{< include ./title-page.html >}}
 
 ## Задание
 На основе рассмотренного на лекции примера реализуйте алгоритм Policy Iteration для любой среды обучения с подкреплением (кроме рассмотренной на лекции среды Toy Text / Frozen Lake) из библиотеки Gym (или аналогичной библиотеки).
 
 ## Выполнение
+Tatata: {{< var author.name >}}
 Исходный код программы:
 ```python
-{{< include ../src/policy_iteration/main.py >}}
+{{< include ../../src/policy_iteration/main.py >}}
 ```
 
 И содержимое `toy_environment.consts`:
 ```python
-{{< include ../src/toy_environment/consts.py >}}
+{{< include ../../src/toy_environment/consts.py >}}
 ```
 

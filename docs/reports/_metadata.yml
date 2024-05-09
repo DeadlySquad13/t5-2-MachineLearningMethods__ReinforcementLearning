@@ -1,0 +1,6 @@
+format:
+  html:
+    css: report.styles.scss
+
+fontsize: "14px"
+mainfont: "Times New Roman"
