@@ -1,2 +1,14 @@
 author:
-    name: 'Александр'
+    name: 'Пакало А. С.'
+    group: 'ИУ5-22М'
+
+reviewer:
+    name: 'Гапанюк Ю. Е.'
+
+work:
+    discipline: 'Методы машинного обучения'
+    theme: 'Обучение с подкреплением. Алгоритм Policy Iteration'
+    type: 'Лабораторная работа'
+    number: '1'
+    variant: '2'
+    completion_year: 2024
