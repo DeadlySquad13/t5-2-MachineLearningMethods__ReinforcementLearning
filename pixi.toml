@@ -60,6 +60,9 @@ pypi-dependencies = { t5-2-MachineLearningMethods__ReinforcementLearning = { pat
 preview-docs = "quarto preview docs"
 build-docs = "quarto render docs"
 
+preview-reports = "quarto preview reports"
+build-reports = "quarto render reports"
+
 [feature.quarto.dependencies]
 quarto = "1.4.550"
 
