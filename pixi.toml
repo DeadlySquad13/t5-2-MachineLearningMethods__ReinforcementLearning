@@ -62,6 +62,7 @@ build-docs = "quarto render docs"
 
 preview-reports = "quarto preview reports"
 build-reports = "quarto render reports"
+build-reports-pdf = "quarto render reports/policy_iteration.qmd --to pdf"
 
 [feature.quarto.dependencies]
 quarto = "1.4.550"
