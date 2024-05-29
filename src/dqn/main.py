@@ -11,9 +11,10 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 # Название среды
-CONST_ENV_NAME = "CartPole-v1"
+CONST_ENV_NAME = "Acrobot-v1"
 # Использование GPU
 CONST_DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+HIDDEN_SIZE = 64
 
 # Элемент ReplayMemory в форме именованного кортежа
 Transition = namedtuple("Transition", ("state", "action", "next_state", "reward"))
@@ -48,9 +49,9 @@ class DQN_Model(nn.Module):
         Инициализация топологии нейронной сети
         """
         super(DQN_Model, self).__init__()
-        self.layer1 = nn.Linear(n_observations, 128)
-        self.layer2 = nn.Linear(128, 128)
-        self.layer3 = nn.Linear(128, n_actions)
+        self.layer1 = nn.Linear(n_observations, HIDDEN_SIZE)
+        self.layer2 = nn.Linear(HIDDEN_SIZE, HIDDEN_SIZE)
+        self.layer3 = nn.Linear(HIDDEN_SIZE, n_actions)
 
     def forward(self, x):
         """
@@ -237,8 +238,10 @@ class DQN_Agent:
         """
         Обучение агента
         """
-        if torch.cuda.is_available():
-            num_episodes = 600
+        cuda_is_available = torch.cuda.is_available()
+        print("Обучаемся с использованием cuda:", cuda_is_available)
+        if cuda_is_available:
+            num_episodes = 400
         else:
             num_episodes = 50
 
