@@ -77,11 +77,23 @@ pytorch-cuda = "12.1.*"
 [feature.deep-learning.tasks]
 dqn-lab = "python src/dqn/main.py"
 
+[feature.atari.tasks]
+pong = "python src/dqn-atari/main.py --env-name pong --model dueldqn --ddqn --epoch 501 --eval-cycle 50"
+breakout = "python src/dqn-atari/main.py --env-name breakout --model dqn --epoch 10001 --eval-cycle 500"
+boxing = "python src/dqn-atari/main.py --env-name boxing --model dueldqn --ddqn --epoch 1001 --eval-cycle 100"
+
+[feature.atari.pypi-dependencies]
+gymnasium = { version = "*", extras = ["accept-rom-license", "atari"] }
+opencv-python = "*"
+imageio = { version = "*", extras = ["ffmpeg"] }
+
 [environments]
 default = []
 dqn = ["deep-learning"]
+dqn-atari = ["deep-learning", "atari"]
 dev = ["test", "lint", "pre-commit"]
-dqn-dev = ["deep-learning", "test", "lint", "pre-commit"]
+# Environments are taking too much space
+# dqn-dev = ["deep-learning", "test", "lint", "pre-commit"]
 dev-ju = ["test", "lint", "jupyter", "pre-commit"]
 dev-ju-nvim = ["test", "lint", "jupyter", "jupyter-neovim", "pre-commit"]
 quarto = ["quarto", "jupyter"]
