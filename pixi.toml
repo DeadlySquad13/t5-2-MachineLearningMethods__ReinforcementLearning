@@ -76,6 +76,7 @@ pytorch-cuda = "12.1.*"
 
 [feature.deep-learning.tasks]
 dqn-lab = "python src/dqn/main.py"
+actor-critic = "python src/actor_critic/main.py"
 
 [feature.atari.tasks]
 pong = "python src/dqn-atari/main.py --env-name pong --model dueldqn --ddqn --epoch 501 --eval-cycle 50"
