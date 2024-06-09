@@ -85,6 +85,8 @@ pages:
     artifacts:
         paths:
           - public
+          - docs
+          - reports
     rules:
         - if: $CI_COMMIT_BRANCH == "staging" # ensure to run on master (with default PAGES_PREFIX)
           variables:
