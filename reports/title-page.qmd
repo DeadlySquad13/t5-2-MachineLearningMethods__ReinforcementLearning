@@ -703,7 +703,7 @@
             >
                 <b style="mso-bidi-font-weight: normal"
                     ><span style="font-size: 14pt"
-                        >{{< var work.type >}} №__<u>{{< var work.number >}}</u>__ <o:p></o:p></span
+                        >{{< meta work.type >}} №__<u>{{< meta work.number >}}</u>__ <o:p></o:p></span
                 ></b>
             </p>
 
@@ -720,7 +720,7 @@
             >
                 <span style="font-size: 14pt"
                     >по дисциплине<b style="mso-bidi-font-weight: normal"> </b
-                    >«{{< var work.discipline >}}»<o:p></o:p
+                    >«{{< var discipline.name >}}»<o:p></o:p
                 ></span>
             </p>
 
@@ -772,7 +772,7 @@
                     mso-border-shadow: yes;
                 "
             >
-                <span style="font-size: 14pt"><b>«{{< var work.theme >}}»</b></span>
+                <span style="font-size: 14pt"><b>«{{< meta work.theme >}}»</b></span>
             </p>
 
             <p
@@ -785,7 +785,7 @@
                     mso-border-shadow: yes;
                 "
             >
-                <span style="font-size: 14pt">Вариант № {{< var work.variant >}}</span>
+                <span style="font-size: 14pt">Вариант № {{< var discipline.variant >}}</span>
             </p>
             <p
                 class="MsoNormal"
@@ -862,10 +862,9 @@
 
             <p
                 class="MsoNormal"
-                style="margin-left: 212.55pt; text-indent: 177pt"
+                style="display: flex; justify-content: right; text-indent: 177pt"
             >
-                <span style="font-size: 8pt">ФИО</span
-                ><span style="font-size: 14pt"><o:p></o:p></span>
+                <span style="margin-right: 60px; font-size: 8pt">ФИО</span
             </p>
 
 	    <div style="
@@ -883,8 +882,11 @@
             </p>
 	    </div>
 
-            <p class="MsoNormal" style="margin-left: 389.75pt">
-                <span style="font-size: 8pt">подпись<o:p></o:p></span>
+            <p
+                class="MsoNormal"
+                style="display: flex; justify-content: right; text-indent: 177pt"
+            >
+                <span style="margin-right: 50px; font-size: 8pt">подпись</span
             </p>
 
             <p
@@ -896,7 +898,7 @@
 
             <p class="MsoNormal" align="right" style="text-align: right">
                 <span style="font-size: 14pt"
-                    >&quot;__&quot;_________{{< var work.completion_year >}} г.<o:p></o:p
+                    >&quot;__&quot;_________{{< var discipline.completion_year >}} г.<o:p></o:p
                 ></span>
             </p>
 
@@ -935,10 +937,9 @@
 
             <p
                 class="MsoNormal"
-                style="margin-left: 212.55pt; text-indent: 177pt"
+                style="display: flex; justify-content: right; text-indent: 177pt"
             >
-                <span style="font-size: 8pt">ФИО</span
-                ><span style="font-size: 14pt"><o:p></o:p></span>
+                <span style="margin-right: 60px; font-size: 8pt">ФИО</span
             </p>
 
             <p
@@ -952,8 +953,11 @@
                 ></span>
             </p>
 
-            <p class="MsoNormal" style="margin-left: 389.75pt">
-                <span style="font-size: 8pt">подпись<o:p></o:p></span>
+            <p
+                class="MsoNormal"
+                style="display: flex; justify-content: right; text-indent: 177pt"
+            >
+                <span style="margin-right: 50px; font-size: 8pt">подпись</span
             </p>
 
             <p class="MsoNormal" align="right" style="text-align: right">
@@ -962,7 +966,7 @@
 
             <p class="MsoNormal" align="right" style="text-align: right">
                 <span style="font-size: 14pt"
-                    >&quot;__&quot;_________{{< var work.completion_year >}} г.<o:p></o:p
+                    >&quot;__&quot;_________{{< var discipline.completion_year >}} г.<o:p></o:p
                 ></span>
             </p>
 
@@ -1049,7 +1053,7 @@
                         >Москва<span style="mso-spacerun: yes">  </span>-</span
                     ></span
                 ><span style="font-size: 14pt"
-                    ><span style="mso-spacerun: yes">  </span>{{< var work.completion_year >}}<o:p></o:p
+                    ><span style="mso-spacerun: yes">  </span>{{< var discipline.completion_year >}}<o:p></o:p
                 ></span>
             </p>
 

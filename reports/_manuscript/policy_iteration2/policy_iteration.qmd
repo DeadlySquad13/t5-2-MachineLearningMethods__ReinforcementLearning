@@ -1,9 +1,8 @@
-{{< include ./title-page.qmd >}}
+{{< include ../title-page.qmd >}}
 ## Задание
 На основе рассмотренного на лекции примера реализуйте алгоритм Policy Iteration для любой среды обучения с подкреплением (кроме рассмотренной на лекции среды Toy Text / Frozen Lake) из библиотеки Gym (или аналогичной библиотеки).
 
 ## Выполнение
-Author: {{< var author.name >}}
 Исходный код программы:
 ```python
 {{< include ../src/policy_iteration/main.py >}}

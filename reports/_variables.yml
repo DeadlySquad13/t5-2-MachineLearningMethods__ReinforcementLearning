@@ -5,10 +5,7 @@ author:
 reviewer:
     name: 'Гапанюк Ю. Е.'
 
-work:
-    discipline: 'Методы машинного обучения'
-    theme: 'Обучение с подкреплением. Алгоритм Policy Iteration'
-    type: 'Лабораторная работа'
-    number: '1'
-    variant: '2'
+discipline:
+    name: 'Методы машинного обучения'
+    variant: '13'
     completion_year: 2024
