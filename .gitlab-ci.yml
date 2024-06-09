@@ -71,8 +71,10 @@ order-imports-check:
 pages:
     stage: docs
     script:
-        - echo "Build docs website 🚀"
-        - pixi run --environment quarto build-docs
+        # - echo "Build docs website 🚀"
+        # - pixi run --environment quarto build-docs
+        - echo "Build reports website 🚀"
+        - pixi run --environment quarto build-reports
         - echo "Pages accessible through ${CI_PAGES_URL}/${PAGES_PREFIX}"
         - echo "Finished, thanks for patience ❤️ "
     variables:
