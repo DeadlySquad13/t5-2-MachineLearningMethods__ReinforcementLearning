@@ -26,12 +26,12 @@ build-docker:
           # Login as CI user and make changes in our local gitlab docker registry from it's name.
         - echo "$CI_REGISTRY_PASSWORD" | docker login "$CI_REGISTRY" -u "$CI_REGISTRY_USER" --password-stdin
     script:
-        - docker build -t $CI_REGISTRY/deadlysquad13/mlops_course:latest --file Dockerfile.ci .
-        - docker push $CI_REGISTRY/deadlysquad13/mlops_course:latest
+        - docker build -t $CI_REGISTRY/deadlysquad13/t5-2-MachineLearningMethodsReinforcementLearning:latest --file Dockerfile.ci .
+        - docker push $CI_REGISTRY/deadlysquad13/t5-2-MachineLearningMethodsReinforcementLearning:latest
 
 # Use our own docker image by default.
 default:
-    image: $CI_REGISTRY/deadlysquad13/mlops_course:latest
+    image: $CI_REGISTRY/deadlysquad13/t5-2-MachineLearningMethodsReinforcementLearning:latest
 
 build:
     stage: build
@@ -85,8 +85,6 @@ pages:
     artifacts:
         paths:
           - public
-          - docs
-          - reports
     rules:
         - if: $CI_COMMIT_BRANCH == "staging" # ensure to run on master (with default PAGES_PREFIX)
           variables:
