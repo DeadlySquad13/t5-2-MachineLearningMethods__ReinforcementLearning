@@ -156,6 +156,9 @@
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -182,6 +185,8 @@
   <ul>
   <li><a href="#задание" id="toc-задание" class="nav-link active" data-scroll-target="#задание">Задание</a></li>
   <li><a href="#выполнение" id="toc-выполнение" class="nav-link" data-scroll-target="#выполнение">Выполнение</a></li>
+  <li><a href="#результат" id="toc-результат" class="nav-link" data-scroll-target="#результат">Результат</a></li>
+  <li><a href="#вывод" id="toc-вывод" class="nav-link" data-scroll-target="#вывод">Вывод</a></li>
   </ul>
 </nav>
 </div>
@@ -1228,6 +1233,18 @@
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"actions_variants"</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="результат" class="level2">
+<h2 class="anchored" data-anchor-id="результат">Результат</h2>
+<p>Одна тысяча итераций:</p>
+<p><a href="../execution_results/policy_iteration/play_captures/PolicyIteration_1_000.mp4" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><video src="../execution_results/policy_iteration/play_captures/PolicyIteration_1_000.mp4" class="img-fluid" controls=""></video></a><a href="../execution_results/policy_iteration/play_captures/PolicyIteration_1_000.mp4">Video</a></p>
+<p>Сто тысяч итераций:</p>
+<p><a href="../execution_results/policy_iteration/play_captures/PolicyIteration_100_000.mp4" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><video src="../execution_results/policy_iteration/play_captures/PolicyIteration_100_000.mp4" class="img-fluid" controls=""></video></a><a href="../execution_results/policy_iteration/play_captures/PolicyIteration_100_000.mp4">Video</a></p>
+</section>
+<section id="вывод" class="level2">
+<h2 class="anchored" data-anchor-id="вывод">Вывод</h2>
+<p>В этой лабораторной работе мы реализовали алгоритм Policy Iteration. Этот алгоритм отлично справился с задачей Frozen Lake и Taxi.</p>
+<p>Однако совершенно не справился с задачей Cliff Walking, вероятнее всего дело в особенности наград в данном сценарии: Policy Iteration редко получает обратную реакцию от среды, лишь постоянно уходит в минус из-за превышения количества ходов и падения в обрыв.</p>
+</section>
      </div></main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1615,6 +1632,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content --> 
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script> 
   
 </body></html>
